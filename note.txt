@@ -1,0 +1,11 @@
+Mô hình nhận diện khuôn mặt:
+
+Dlib
+MobileNet
+Thư viện xử lý hình ảnh và camera:
+OpenCV
+
+Kỹ thuật xử lý hình ảnh nhanh:
+
+Hardware Acceleration
+Kết hợp HOG và CNN (Convolutional Neural Network)
