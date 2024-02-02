@@ -10,7 +10,7 @@ face_recognition_model = dlib.face_recognition_model_v1(r'D:\dlib_face_recogniti
 
 known_faces = []
 
-# Hàm nhận diện và in ra mô tả khuôn mặt
+
 def recognize_faces(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = detector(gray)
@@ -19,7 +19,7 @@ def recognize_faces(frame):
         shape = shape_predictor(gray, face)
         face_descriptor = face_recognition_model.compute_face_descriptor(frame, shape)
 
-        # Thêm vào danh sách khuôn mặt đã biết
+  
         known_faces.append({
             'name': f'Linh_{len(known_faces) + 1}',
             'descriptor': face_descriptor,
@@ -29,7 +29,7 @@ def recognize_faces(frame):
             }
         })
 
-        # Vẽ hình chữ nhật
+      
         cv2.rectangle(frame, (face.left(), face.top()), (face.right(), face.bottom()), (0, 255, 0), 2)
 
     return frame
@@ -41,10 +41,7 @@ while True:
     if not ret:
         break
 
-    # Thực hiện nhận diện khuôn mặt 
     frame = recognize_faces(frame)
-
-    # Hiển thị frame
     cv2.imshow('Face_Recognition_Test', frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):

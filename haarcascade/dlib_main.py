@@ -27,10 +27,8 @@ def recognize_faces(frame):
 
         # known_faces_array có hình dạng (N, 128)
         known_faces_array = np.array([np.array(descriptor['descriptor']) for descriptor in known_faces])
-
         # So sánh với khuôn mặt đã biết
         match = np.argmin(np.linalg.norm(known_faces_array - face_descriptor, axis=1))
-
         # Vẽ hình chữ nhật xung quanh khuôn mặt và hiển thị tên
         cv2.rectangle(frame, (face.left(), face.top()), (face.right(), face.bottom()), (0, 255, 0), 2)
         cv2.putText(frame, known_faces[match]['name'], (face.left(), face.top() - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
@@ -46,9 +44,7 @@ while True:
 
     # Thực hiện nhận diện khuôn mặt
     frame = recognize_faces(frame)
-
-    # Hiển thị frame
-    cv2.imshow('Nhận diện khuôn mặt thời gian thực', frame)
+    cv2.imshow('Face_recognition_main', frame)
 
    
     if cv2.waitKey(1) & 0xFF == ord('q'):
