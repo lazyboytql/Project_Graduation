@@ -42,7 +42,6 @@ while True:
     if not ret:
         break
 
-    # Thực hiện nhận diện khuôn mặt
     frame = recognize_faces(frame)
     cv2.imshow('Face_recognition_main', frame)
 
