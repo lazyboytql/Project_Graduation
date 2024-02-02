@@ -51,7 +51,6 @@ print("Danh sách mô tả khuôn mặt:")
 for i, face_info in enumerate(known_faces):
     print(f"Người {i + 1}: {face_info['descriptor']} | Name: {face_info['name']} | Range: {face_info['additional_info']['range_min']} - {face_info['additional_info']['range_max']}")
 
-
 with open('Linh.pkl', 'wb') as file:
     pickle.dump(known_faces, file)
 
