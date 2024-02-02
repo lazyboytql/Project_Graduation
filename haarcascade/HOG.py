@@ -36,7 +36,6 @@ def load_images(folder):
 train_images, train_labels = load_images(train_data_folder)
 test_images, test_labels = load_images(test_data_folder)
 
-
 resized_train_images = [cv2.resize(img, win_size) for img in train_images]
 resized_test_images = [cv2.resize(img, win_size) for img in test_images]
 
