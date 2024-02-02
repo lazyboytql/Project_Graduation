@@ -1,7 +1,7 @@
 import pickle
 
 # Mở tệp pickle để đọc
-with open(r'D:\Project_Graduation\known_faces.pkl', 'rb') as file:
+with open(r'D:\Project_Graduation\Linh.pkl', 'rb') as file:
     loaded_known_faces = pickle.load(file)
 
 # In ra danh sách mô tả khuôn mặt đã biết từ tệp

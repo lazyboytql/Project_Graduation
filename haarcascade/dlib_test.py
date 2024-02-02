@@ -7,7 +7,7 @@ detector = dlib.get_frontal_face_detector()
 shape_predictor = dlib.shape_predictor(r'D:\shape_predictor_68_face_landmarks.dat')
 face_recognition_model = dlib.face_recognition_model_v1(r'D:\dlib_face_recognition_resnet_model_v1.dat')
 
-# Mô tả khuôn mặt của những người đã biết
+
 known_faces = []
 
 # Hàm nhận diện và in ra mô tả khuôn mặt
@@ -45,7 +45,7 @@ while True:
     frame = recognize_faces(frame)
 
     # Hiển thị frame
-    cv2.imshow('Nhận diện khuôn mặt', frame)
+    cv2.imshow('Face_Recognition_Test', frame)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
@@ -54,7 +54,7 @@ print("Danh sách mô tả khuôn mặt:")
 for i, face_info in enumerate(known_faces):
     print(f"Người {i + 1}: {face_info['descriptor']} | Name: {face_info['name']} | Range: {face_info['additional_info']['range_min']} - {face_info['additional_info']['range_max']}")
 
-# Lưu danh sách mô tả khuôn mặt vào tệp pkl
+
 with open('Linh.pkl', 'wb') as file:
     pickle.dump(known_faces, file)
 

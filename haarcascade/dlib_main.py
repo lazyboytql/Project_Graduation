@@ -11,7 +11,7 @@ face_recognition_model = dlib.face_recognition_model_v1(r'D:\dlib_face_recogniti
 known_faces = []
 
 # Thêm info từng file pkl của từng khuôn mặt
-for pkl_file in ['Linh.pkl', 'OtherFace.pkl', 'AnotherFace.pkl']:
+for pkl_file in ['Linh.pkl']:
     with open(pkl_file, 'rb') as file:
         face_data = pickle.load(file)
         known_faces.extend(face_data)
