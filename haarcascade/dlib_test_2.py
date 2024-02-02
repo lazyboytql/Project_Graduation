@@ -14,7 +14,6 @@ class FaceRecognition:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         shape = self.shape_predictor(gray, face)
         return self.face_recognition_model.compute_face_descriptor(frame, shape)
-
     def recognize_faces(self, frame):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         faces = self.detector(gray)
