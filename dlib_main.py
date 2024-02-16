@@ -4,7 +4,7 @@ import pickle
 import ctypes
 import psycopg2
 import dlib 
-
+import datetime
 notification_displayed = False
 
 
@@ -27,8 +27,9 @@ cur = conn.cursor()
 
 
 def add_data_to_database(name, class_):
-    sql = "INSERT INTO check_in_history (name, class) VALUES (%s, %s)"
-    cur.execute(sql, (name, class_))
+    sql = "INSERT INTO check_in_history (name, class, check_in_time) VALUES (%s, %s, %s)"
+    ct = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
+    cur.execute(sql, (name, class_, ct))
     conn.commit()
 
 detector = dlib.get_frontal_face_detector()
@@ -76,7 +77,6 @@ while True:
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
 cur.close()
 conn.close()
 cap.release()
