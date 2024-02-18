@@ -6,8 +6,8 @@ import pickle
 class FaceRecognition:
     def __init__(self):
         self.detector = dlib.get_frontal_face_detector()
-        self.shape_predictor = dlib.shape_predictor(r'D:\shape_predictor_68_face_landmarks.dat')
-        self.face_recognition_model = dlib.face_recognition_model_v1(r'D:\dlib_face_recognition_resnet_model_v1.dat')
+        self.shape_predictor = dlib.shape_predictor(r'D:\Project_Graduation\shape_predictor_68_face_landmarks.dat')
+        self.face_recognition_model = dlib.face_recognition_model_v1(r'D:\Project_Graduation\dlib_face_recognition_resnet_model_v1.dat')
         self.known_faces = []
 
     def calculate_face_descriptor(self, frame, face):
