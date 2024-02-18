@@ -33,8 +33,8 @@ def add_data_to_database(name, class_):
     conn.commit()
 
 detector = dlib.get_frontal_face_detector()
-shape_predictor = dlib.shape_predictor(r'D:\shape_predictor_68_face_landmarks.dat')
-face_recognition_model = dlib.face_recognition_model_v1(r'D:\dlib_face_recognition_resnet_model_v1.dat')
+shape_predictor = dlib.shape_predictor(r'D:\Project_Graduation\shape_predictor_68_face_landmarks.dat')
+face_recognition_model = dlib.face_recognition_model_v1(r'D:\Project_Graduation\dlib_face_recognition_resnet_model_v1.dat')
 
 known_faces = []
 
