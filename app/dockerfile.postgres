@@ -1,0 +1,16 @@
+FROM postgres:latest
+
+# Install psycopg2 dependency for Python connection
+RUN apt-get update && apt-get install -y libpq-dev
+
+# Optionally, add custom initialization scripts, if needed
+# COPY init.sql /docker-entrypoint-initdb.d/
+
+# Set environment variables, if needed
+# ENV POSTGRES_USER=myuser
+# ENV POSTGRES_PASSWORD=mypassword
+# ENV POSTGRES_DB=mydatabase
+
+# Allow connections from all IP addresses
+RUN echo "host all all 0.0.0.0/0 md5" >> /etc/postgresql/pg_hba.conf
+RUN echo "listen_addresses='*'" >> /etc/postgresql/postgresql.conf

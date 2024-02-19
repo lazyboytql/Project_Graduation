@@ -1,7 +1,7 @@
 import pickle
 
 
-with open(r'D:\Project_Graduation\Thinh.pkl', 'rb') as file:
+with open(r'D:\Project_Graduation\Linh.pkl', 'rb') as file:
     loaded_known_faces = pickle.load(file)
 
 
